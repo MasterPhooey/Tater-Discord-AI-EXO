@@ -1,10 +1,14 @@
 # Discord bot token
 DISCORD_TOKEN=your_token
 
-# Ollama (AI model) settings
-OLLAMA_HOST=127.0.0.1
+# EXO (Chat API) settings
+EXO_API_ENDPOINT=http://10.4.20.21:52415
+EXO_MODEL=qwen-2.5-1.5b
+EXO_TEMPERATURE=0.7
+
+# Ollama (Embeddings) settings
+OLLAMA_HOST=10.4.20.204
 OLLAMA_PORT=11434
-OLLAMA_MODEL=mistral-small:24b
 OLLAMA_EMB_MODEL=nomic-embed-text
 CONTEXT_LENGTH=10000
 
