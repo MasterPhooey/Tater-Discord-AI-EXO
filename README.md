@@ -1,4 +1,4 @@
-# Tater Discord Bot (WIP)
+# Tater EXO AI (WIP)
 
 Tater is a Discord bot that uses EXO for chat functionality and tool integration while still using Ollama for embedding generation.
 
