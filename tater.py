@@ -55,7 +55,7 @@ class tater(commands.Bot):
             "model": os.getenv("EXO_MODEL", "llama-3.1-8b"),
             "messages": messages,
             "temperature": EXO_TEMPERATURE,
-            "stream": stream
+            "stream": False
         }
         url = f"{EXO_API_ENDPOINT}/v1/chat/completions"
         async with httpx.AsyncClient() as client:
@@ -255,7 +255,7 @@ class tater(commands.Bot):
                                     [{"role": "system", "content": waiting_prompt}],
                                     stream=False
                                 )
-                                waiting_text = waiting_response["message"].get("content", "")
+                                waiting_text = waiting_response["choices"][0]["message"]["content"].replace("<|im_end|>", "").strip()
                                 if waiting_text:
                                     await message.channel.send(waiting_text)
                                 else:
@@ -301,7 +301,7 @@ class tater(commands.Bot):
                                 [{"role": "system", "content": waiting_prompt}],
                                 stream=False
                             )
-                            waiting_text = waiting_response["message"].get("content", "")
+                            waiting_text = waiting_response["choices"][0]["message"]["content"].replace("<|im_end|>", "").strip()
                             if waiting_text:
                                 await message.channel.send(waiting_text)
                             else:
@@ -341,7 +341,7 @@ class tater(commands.Bot):
                                 [{"role": "system", "content": waiting_prompt}],
                                 stream=False
                             )
-                            waiting_text = waiting_response["message"].get("content", "")
+                            waiting_text = waiting_response["choices"][0]["message"]["content"].replace("<|im_end|>", "").strip()
                             if waiting_text:
                                 await message.channel.send(waiting_text)
                             else:
@@ -376,7 +376,7 @@ class tater(commands.Bot):
                                 [{"role": "system", "content": waiting_prompt}],
                                 stream=False
                             )
-                            waiting_text = waiting_response["message"].get("content", "")
+                            waiting_text = waiting_response["choices"][0]["message"]["content"].replace("<|im_end|>", "").strip()
                             if waiting_text:
                                 await message.channel.send(waiting_text)
                             else:
@@ -405,7 +405,7 @@ class tater(commands.Bot):
                                 [{"role": "system", "content": waiting_prompt}],
                                 stream=False
                             )
-                            waiting_text = waiting_response["message"].get("content", "")
+                            waiting_text = waiting_response["choices"][0]["message"]["content"].replace("<|im_end|>", "").strip()
                             if waiting_text:
                                 await message.channel.send(waiting_text)
                             else:
