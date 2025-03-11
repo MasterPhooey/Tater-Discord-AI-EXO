@@ -1,3 +1,5 @@
+# Note, most likey wont be updating this as ollama is just way faster use https://github.com/MasterPhooey/Tater-Discord-WebUI
+
 # Tater - A Discord Bot Powered by EXO AI Cluster and Ollama (WIP)
 
 Tater is a Discord bot that uses EXO for chat functionality and tool integration while still using Ollama for embedding generation.
